@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1330px;
+  }
+}
+
+.head-section {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0) 100px,
+      rgba(0, 0, 0, 0)
+    ),
+    url('../images/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.head-section .container {
+  position: relative;
+  height: 100vh;
+}
+
+.logo-area {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-left svg {
+  width: 80px;
+  fill: #fff;
+}
+
+.logo-left span {
+  color: #fff;
+  font-family: 'ducati-cond', 'ducati', Helvetica, Arial, 'Noto Sans TW',
+    'PingFang', 'PingFangTC', 'Microsoft JhengHei', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.logo-right a {
+  color: #fff;
+  font-family: 'ducati-cond', 'ducati', Helvetica, Arial, 'Noto Sans TW',
+    'PingFang', 'PingFangTC', 'Microsoft JhengHei', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.logo-right a:hover {
+  text-decoration: none;
+}
+
+.logo-right a:nth-child(1) {
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
+.logo-right a:nth-child(3) {
+  margin-right: 20px;
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+}
+
+.logo-right a:nth-child(4)::after {
+  content: '';
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin: -2px 0 0 5px;
+  opacity: 0.6;
+  transition: transform 0.3s;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../images/iconset.svg);
+  background-size: auto 100%;
+  background-position: 22.45% 0;
+}
+
+.head-section nav {
+  background-color: #fff;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition: 0.5s;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-left a,
+.nav-right a {
+  font-family: 'ducati', Helvetica, Arial, 'Noto Sans TW', 'PingFang',
+    'PingFangTC', 'Microsoft JhengHei', sans-serif;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-left a {
+  margin-right: 0px;
+}
+
+.nav-left a:nth-child(1) {
+  display: inline-block;
+  width: 16px;
+  height: 2px;
+  background-color: #000;
+  box-shadow: 0px -5px 0px 0px #000, 0px -10px 0px 0px #000;
+}
+
+.nav-left a:nth-child(2) {
+  color: #c00;
+}
+
+@media (min-width: 1200px) {
+  .head-section nav {
+    padding: 50px 50px;
+  }
+  .nav-left {
+    width: fit-content !important;
+  }
+
+  .nav-left a {
+    margin-right: 0px;
+    margin-left: 60px;
+  }
+
+  .nav-left a:nth-child(2) {
+    color: #000;
+  }
+
+  .nav-left a:nth-child(2)::after,
+  .nav-left a:nth-child(3)::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 8px;
+    height: 8px;
+    background: url(../images/arrow-nav.svg) no-repeat center center;
+    transform: scaleY(-1);
+    margin-left: 20px;
+    opacity: 0.1;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+}
+
+.nav-right a {
+  margin: 0 30px;
+}
+
+.ducati {
+  width: 56px;
+  height: 60px;
+  background: url(../images/ducati.svg) no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s;
+}
+
+.banner-text-area {
+  color: #fff;
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 110px;
+}
+
+.banner-text-area h3 {
+  font-size: 27px;
+}
+
+.banner-text-area a {
+  color: #fff;
+  background-image: linear-gradient(to bottom, red, #c00);
+  display: block;
+  width: 190px;
+  height: 60px;
+  text-align: center;
+  line-height: 64px;
+  border-radius: 2px;
+}
+
+.banner-text-area a:hover {
+  text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+  .banner-text-area h3 {
+    font-size: 48px;
+  }
+  .banner-text-area a {
+    float: right;
+  }
+}
+
+@media (min-width: 992px) {
+}
