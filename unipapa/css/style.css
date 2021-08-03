@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+}
+.h-15 {
+  height: 1.5rem;
+}
+
+.trans5s {
+  transition: 0.5s;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  min-height: 1000px;
+  background: url(../images/47.png);
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
+  position: relative;
+}
+
+.logo svg {
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+}
+
+.banner .buy-link {
+  padding: 5px 30px;
+  border-radius: 14% / 50%;
+}
+
+.banner-subtitle-dark {
+  display: none;
+}
+
+.banner-info h2 {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.banner-info p:nth-child(4) {
+  color: #ccc;
+  font-size: 1.4rem;
+}
+
+.dark-mode-switch-area {
+  width: fit-content;
+}
+
+.dark-mode-switch {
+  width: 50px;
+  height: 30px;
+  background-color: #333;
+  border-radius: 30% / 50%;
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-circle {
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: 3px;
+}
+
+.dark-mode-switch-area span:nth-child(3) {
+  color: #ccc;
+}
+
+header.dark-mode {
+  background: url(../images/landscape_37.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.dark-mode .container-fluid {
+  background-color: #333;
+}
+
+.dark-mode .logo svg {
+  fill: #fff;
+}
+
+.dark-mode .nav-links-area a,
+.dark-mode .nav-right a {
+  color: #fff !important;
+}
+
+.dark-mode i {
+  color: #fff;
+}
+
+.dark-mode .banner-subtitle {
+  display: none;
+}
+
+.dark-mode .banner-subtitle-dark {
+  display: block;
+}
+
+.dark-mode h2 {
+  color: #fff;
+}
+
+.dark-mode .dark-mode-switch-area span:nth-child(1) {
+  color: #777;
+}
+
+.dark-mode .dark-mode-switch-area span:nth-child(3) {
+  color: #fff;
+}
+
+.dark-mode .dark-mode-switch {
+  background-color: #fff;
+}
+
+.dark-mode .dark-mode-circle {
+  background-color: #333;
+}
+
+.dark-mode-circle.active {
+  margin-left: 27px;
+}
+
+@media (max-width: 992px) {
+  header {
+    background: url(../images/02-portrait.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  header.dark-mode {
+    background: url(../images/portrait_23.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .banner-subtitle,
+  .banner-subtitle-dark {
+    font-size: 0.875rem;
+    margin-bottom: 5px;
+  }
+  .banner-info h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+
+  .banner-info p:nth-child(4) {
+    font-size: 0.875rem;
+  }
+
+  .dark-mode-switch-area {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
