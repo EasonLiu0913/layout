@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音羽山 清水寺</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 20px 0 0;
+            background: url('./images/sp_bg_01.png');
+            background-size: 320px auto;
+        }
+
+        body.m-menu-showed {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        nav {
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .m-nav {
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .nav-links-area {
+            width: 40%;
+            border-bottom: 1px solid #ccc;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .logo {
+            width: 5%;
+            margin-left: 2%;
+            margin-right: 2%;
+        }
+
+        .logo>img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+
+
+        .nav-links-area>li {
+            width: 100%;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            line-height: 90px;
+            color: #1a1a1a;
+            letter-spacing: .46em;
+            text-align: center;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 2px;
+            background-color: #ccc;
+            position: absolute;
+            bottom: 10%;
+            left: 45%;
+            opacity: 0;
+            transition: .5s;
+
+        }
+
+        .nav-link:hover::after {
+            opacity: 1;
+            bottom: 30%;
+        }
+
+        .m-logo {
+            width: 30%;
+        }
+
+        .m-menu-btn>div {
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+            margin-bottom: 2px;
+        }
+
+        .m-menu-btn.active .line1 {
+            animation: line1Ani .8s;
+            animation-fill-mode: forwards;
+        }
+
+        .m-menu-btn.back .line1 {
+            animation: line1AniReverse .8s;
+            animation-fill-mode: forwards;
+        }
+
+        .m-menu-btn.active .line2 {
+            animation: line2Ani .8s;
+            animation-fill-mode: forwards;
+        }
+
+        .m-menu-btn.back .line2 {
+            animation: line2AniReverse .8s;
+            animation-fill-mode: forwards;
+        }
+
+        .m-menu-btn.active .line3 {
+            animation: line3Ani .8s;
+            animation-fill-mode: forwards;
+        }
+
+        .m-menu-btn.back .line3 {
+            animation: line3AniReverse .8s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes line1Ani {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(4px);
+            }
+
+            100% {
+                transform: translateY(4px) rotate(45deg);
+            }
+        }
+
+        @keyframes line1AniReverse {
+            0% {
+                transform: translateY(4px) rotate(45deg);
+
+            }
+
+            50% {
+                transform: translateY(4px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes line2Ani {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes line2AniReverse {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes line3Ani {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+
+            100% {
+                transform: translateY(-4px) rotate(135deg);
+            }
+        }
+
+        @keyframes line3AniReverse {
+            0% {
+                transform: translateY(-4px) rotate(135deg);
+
+            }
+
+            50% {
+                transform: translateY(-4px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .main_pic {
+            width: 100%;
+            background: url('./images/main_img.jpeg');
+            background-size: cover;
+            position: relative;
+
+        }
+
+        .time_title {
+            writing-mode: vertical-rl;
+            position: absolute;
+            border-top: 1px solid rgba(203, 203, 203, .6);
+            top: 1rem;
+            left: -3rem;
+            padding-top: 1rem;
+            padding-right: 1.5rem;
+            font-size: 11px;
+            line-height: 1;
+            letter-spacing: .28em;
+            margin: 0;
+        }
+
+
+        .home_mv_notice_ul,
+        .home_mv_news_ul {
+            position: relative;
+            padding-top: 30px;
+            padding: 30px 0 20px 41px;
+            border-left: 1px solid rgba(203, 203, 203, .6);
+            border-bottom: 1px solid rgba(203, 203, 203, .6);
+        }
+
+        .home_mv_notice_ul:after,
+        .home_mv_news .home_mv_news_ul_wrap:after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 1px;
+            background: rgba(203, 203, 203, .6);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            bottom: 3px;
+            left: -1px;
+        }
+
+        .important-notice {
+            font-size: 11px;
+            position: absolute;
+            z-index: 9999;
+            writing-mode: vertical-rl;
+            top: 0;
+            left: 0;
+            margin: -13px;
+            line-height: 26px;
+            padding: 1rem 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(203, 203, 203, .6) 50%, transparent 60%) bottom left no-repeat, linear-gradient(135deg, transparent 40%, rgba(203, 203, 203, .6) 50%, transparent 60%) top left no-repeat, linear-gradient(225deg, transparent 40%, rgba(203, 203, 203, .6) 50%, transparent 60%) top right no-repeat, linear-gradient(315deg, transparent 40%, rgba(203, 203, 203, .6) 50%, transparent 60%) bottom right no-repeat, linear-gradient(rgba(203, 203, 203, .6) 50%, transparent 50%) top center no-repeat, linear-gradient(transparent 50%, rgba(203, 203, 203, .6) 50%) bottom center no-repeat, linear-gradient(to right, rgba(203, 203, 203, .6) 50%, transparent 50%) left center no-repeat, linear-gradient(to left, rgba(203, 203, 203, .6) 50%, transparent 50%) right center no-repeat, url('https://www.kiyomizudera.or.jp/assets/img/common/pc_bg_01.png');
+            background-size: 6px 6px, 6px 6px, 6px 6px, 6px 6px, calc(100% - 12px) 2px, calc(100% - 12px) 2px, 2px calc(100% - 12px), 2px calc(100% - 12px), auto;
+        }
+
+        .home_mv_notice_ul_li {
+            padding: 11px 0;
+        }
+
+
+        .home_mv_notice_ul_li:nth-child(1) {
+            border-bottom: 1px solid rgba(203, 203, 203, .6);
+        }
+
+
+        .home_mv_notice_ul_li p {
+            font-size: 12px;
+            line-height: 38px;
+            margin: 0;
+        }
+
+        .home_mv_news_ul {
+            padding-bottom: 50px;
+        }
+
+        .home_mv_news_ul_li {
+            padding-bottom: 10px;
+        }
+
+        .home_mv_news_ul_li img {
+            width: 100%;
+        }
+
+        .home_mv_news_ul_li_a_time {
+            color: #787878;
+            font-size: 11px;
+        }
+
+        .home_mv_news_ul_li_a_p {
+            margin-top: 0;
+            font-size: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .home_mv_news .home_mv_news_list_link {
+            position: absolute;
+            left: calc(50% + 6px);
+            bottom: 21px;
+            -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+
+        }
+
+        .home_mv_news .home_mv_news_list_link:before {
+            width: calc(100% + 11px);
+            height: 1px;
+            content: '';
+            background-color: #eb4b64;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: opacity 500ms;
+        }
+
+        .home_mv_news .home_mv_news_list_link:after {
+            width: 7px;
+            height: 7px;
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -11px;
+            background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjciIHZpZXdCb3g9IjAgMCA3IDciIHdpZHRoPSI3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im0xMDQ3IDg4NyA3IDMuNS03IDMuNS4wMy0uODM0YTIuNzQgMi43NCAwIDAgMCAxLjg3LTIuNjY1IDIuNjI2IDIuNjI2IDAgMCAwIC0xLjktMi42eiIgZmlsbD0iIzU0NTQ1NCIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTA0NyAtODg3KSIvPjwvc3ZnPg==);
+        }
+
+        @media screen and (max-width:576px) {
+            .home_mv_img_a_time_sp {
+                text-align: center;
+                font-size: 11px;
+                line-height: 1;
+                color: #1a1a1a;
+                letter-spacing: .28em;
+                margin-top: 1.5em;
+                position: absolute;
+                width: 100%;
+            }
+
+            .home_mv_img_a_time_sp:after {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 36px;
+                background: rgba(203, 203, 203, .6);
+                margin: 32px auto;
+            }
+
+            .important-notice {
+                width: 32.5vw;
+                text-align: center;
+                position: static;
+                writing-mode: horizontal-tb;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .home_mv_notice_ul {
+                padding: 0 0 0 15px;
+            }
+
+            .home_mv_news_ul {
+                padding: 0 0 0px 0;
+                margin-bottom: 50px;
+            }
+
+            .home_mv_notice_ul_li p {
+                line-height: 1;
+            }
+
+            .home_mv_news_ul_li_a_time {
+                font-size: 11px;
+                display: block;
+            }
+
+            .home_mv_news_ul_li_a_p {
+                margin-top: 0;
+                font-size: 10px;
+                white-space: normal;
+            }
+
+            .home_mv_news .home_mv_news_list_link {
+                left: 50%;
+                transform: translate(-50%, 80px);
+            }
+        }
+
+        .m-menu-area {
+            background-image: url(./images/sp_bg_01.png);
+            background-size: 320px auto;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 70px;
+            opacity: 0;
+            transition: .5s;
+            display: none;
+        }
+
+        @media screen and (max-width:576px) {
+            .m-menu-area {
+                display: block;
+            }
+        }
+
+        .m-menu-area.show {
+            opacity: 1;
+        }
+
+        .container {
+            transition: .5s;
+        }
+
+        .container.hide {
+            opacity: 0;
+        }
+
+        .m-menu-area li {
+            text-align: center;
+            padding: 16px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .social-media-links {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .mr53125 {
+            margin-right: 5.3125vw;
+        }
+
+        .w6875 {
+            width: 6.875vw;
+        }
+
+        .w1375 {
+            width: 13.75vw;
+        }
+
+        .lang-show {
+            position: relative;
+        }
+
+        .lang-select {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+
+        .lang-show::after {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-image: url(./images/i_arr3.svg);
+            background-size: cover;
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            margin-bottom: 2px;
+        }
+
+        .bottom-link {
+            width: fit-content;
+            margin: 0 auto;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #000;
+        }
+
+        .bottom-link>a::after {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 8px;
+            background-image: url(./images/i_window.svg);
+            background-size: cover;
+            margin-left: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="desktop-nav d-none d-sm-flex">
+        <ul class="nav-links-area list-unstyled d-flex">
+            <li>
+                <a href="#" class="text-dark nav-link">祈り</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark nav-link">四季</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark nav-link">行事</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark nav-link">巡る</a>
+            </li>
+        </ul>
+        <div class="logo">
+            <img src="./images/pc_logo.svg" alt="">
+        </div>
+        <ul class="nav-links-area list-unstyled d-flex">
+            <li>
+                <a href="#" class="text-dark nav-link">祈り</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark nav-link">四季</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark nav-link">行事</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark nav-link">巡る</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="m-nav d-flex d-sm-none justify-content-between align-items-center mx-3">
+
+        <div class="m-logo">
+            <img src="./images/sp_logo.svg" alt="">
+        </div>
+
+        <div class="m-menu-btn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav>
+    <div class="m-menu-area px-3">
+        <ul class="list-unstyled">
+            <li>
+                <a href="#" class="text-dark">祈り</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">四季</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">行事</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">巡る</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">歴史</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">交通</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">読む</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">お知らせ</a>
+            </li>
+            <li>
+                <a href="#" class="text-dark">FAQ</a>
+            </li>
+        </ul>
+        <div class="social-media-links d-flex justify-content-center">
+            <div class="mr53125">
+                <img class="w6875" src="./images/facebook.svg" alt="">
+            </div>
+            <div class="mr53125">
+                <img class="w6875" src="./images/ig.svg" alt="">
+            </div>
+            <div class="mr53125">
+                <img class="w1375" src="./images/youtube.svg" alt="">
+            </div>
+            <span class="lang-show">
+                JA
+                <select class="lang-select">
+                    <option selected="">JP</option>
+                    <option value="/en/">EN</option>
+                </select>
+            </span>
+
+        </div>
+
+        <div class="bottom-link">
+            <a href="#" class="text-dark">FEEL KIYOMIZUDERA</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-7 mb-5 mb-sm-0">
+                <div class="main_pic">
+                    <p class="time_title d-none d-sm-block">二〇二一年八月十一日</p>
+                    <img class="square_img w-100" src="https://www.kiyomizudera.or.jp/assets/img/instagram.gif">
+                    <p class="home_mv_img_a_time_sp d-block d-sm-none">
+                        2021.8.11
+                    </p>
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-5 pt-4 mt-5 pl-sm-5 mt-sm-0 mb-5">
+                <section class="home_mv_notice mb-5 mb-sm-3  position-relative">
+                    <h2 class="important-notice">
+                        重要告示
+                    </h2>
+                    <ul class="home_mv_notice_ul list-unstyled">
+                        <li class="home_mv_notice_ul_li">
+                            <p class="mb-2 mb-sm-0" style="vertical-align: inherit;">ペットを連れての入山はご遠慮願います</p>
+
+                        </li>
+                        <li class="home_mv_notice_ul_li">
+                            <p class="mb-2 mb-sm-0" style="vertical-align: inherit;">車椅子をご利用の方へ</p>
+
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="home_mv_news position-relative mt-5">
+                    <h2 class="important-notice">
+                        更新信息
+                    </h2>
+                    <div class="home_mv_news_ul_wrap">
+                        <ul class="home_mv_news_ul list-unstyled d-flex flex-wrap mt-4 mt-sm-0">
+                            <li class="home_mv_news_ul_li col-12 col-sm-6 d-flex flex-sm-wrap">
+
+                                <div
+                                    class="home_mv_news_ul_li_a_imgwrap home_mv_news_ul_li_a_imgwrap_0 col-4 px-0 col-sm-12">
+                                    <img class="home_mv_news_ul_li_a_img" src="./images/event1.jpeg">
+                                </div>
+                                <div class="col-8 col-sm-12 px-sm-0">
+                                    <time class="home_mv_news_ul_li_a_time">
+                                        2021.7/15
+                                    </time>
+                                    <p class="home_mv_news_ul_li_a_p home_mv_news_ul_li_a_p_0">
+                                        2021.8/9－8/16開催　「silk road － 祈りの道」展
+                                    </p>
+                                </div>
+
+                            </li>
+                            <li class="home_mv_news_ul_li col-12 col-sm-6 d-flex flex-sm-wrap">
+
+                                <div
+                                    class="home_mv_news_ul_li_a_imgwrap home_mv_news_ul_li_a_imgwrap_1 col-4 px-0 col-sm-12">
+                                    <img class="home_mv_news_ul_li_a_img" src="./images/event2.jpeg">
+                                </div>
+                                <div class="col-8 col-sm-12 px-sm-0">
+                                    <time class="home_mv_news_ul_li_a_time">
+                                        2021.7/9
+                                    </time>
+                                    <p class="home_mv_news_ul_li_a_p home_mv_news_ul_li_a_p_1">
+                                        2021.8/16厳修 採燈大護摩供
+                                    </p>
+                                </div>
+
+                            </li>
+                            <li class="home_mv_news_ul_li col-12 col-sm-6 d-flex flex-sm-wrap">
+
+                                <div
+                                    class="home_mv_news_ul_li_a_imgwrap home_mv_news_ul_li_a_imgwrap_2 col-4 px-0 col-sm-12">
+                                    <img class="home_mv_news_ul_li_a_img" src="./images/event3.jpg">
+                                </div>
+                                <div class="col-8 col-sm-12 px-sm-0">
+                                    <time class="home_mv_news_ul_li_a_time">
+                                        2021.7/3
+                                    </time>
+                                    <p class="home_mv_news_ul_li_a_p home_mv_news_ul_li_a_p_2">
+                                        2021.8/9～8/16 千日詣り／本堂内々陣特別拝観
+                                    </p>
+                                </div>
+
+                            </li>
+                            <li class="home_mv_news_ul_li col-12 col-sm-6 d-flex flex-sm-wrap">
+
+                                <div
+                                    class="home_mv_news_ul_li_a_imgwrap home_mv_news_ul_li_a_imgwrap_3 col-4 px-0 col-sm-12">
+                                    <img class="home_mv_news_ul_li_a_img" src="./images/event4.jpeg">
+                                </div>
+                                <div class="col-8 col-sm-12 px-sm-0">
+                                    <time class="home_mv_news_ul_li_a_time">
+                                        2021.6/21更新
+                                    </time>
+                                    <p class="home_mv_news_ul_li_a_p home_mv_news_ul_li_a_p_3">
+                                        第2第4日曜は朝講座へ「北法相宗 仏教文化講座」
+                                    </p>
+                                </div>
+
+                            </li>
+                        </ul>
+                        <p class="home_mv_news_list_link show_pctb">
+                            一覧を見る
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        $('.m-menu-btn').on('click', function () {
+            if ($(this).hasClass('active')) {
+                $(this).addClass('back');
+                $(this).removeClass('active');
+                $('body').removeClass('m-menu-showed');
+                $('.m-menu-area').removeClass('show');
+                $('.container').removeClass('hide').show();
+            }
+            else {
+                $(this).addClass('active');
+                $(this).removeClass('back');
+
+                $('body').addClass('m-menu-showed');
+
+                $('.m-menu-area').addClass('show');
+                $('.container').addClass('hide').on('transitionend', function () {
+                    $('.container').hide();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
