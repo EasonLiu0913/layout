@@ -2,8 +2,7 @@
 
 1.VERSE 網站練習
 
-線上展示：[go](https://easonliu0913.github.io/layout/VERSE/verse.html){:target="_blank" rel="noopener"}
-<a href="https://easonliu0913.github.io/layout/VERSE/verse.html" target="_blank">example</a>
+線上展示：<a href="https://easonliu0913.github.io/layout/VERSE/verse.html" target="_blank">example</a>
 ![image](https://github.com/EasonLiu0913/layout/blob/main/screenshot/verse_new.png)
 
 2.杜卡迪台灣網站練習
